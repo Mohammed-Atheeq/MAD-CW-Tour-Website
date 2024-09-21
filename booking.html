@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Here</title>
+
+    <link rel="icon" href="Images/logo_2.png">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="javascript.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+
+</head>
+<body class="booking-body" id="booking">
+
+    <nav>
+        <img src="Images/logo.png" class="logo" alt="Logo" title="FlyLoka Travels">
+   
+        <ul class="navbar">
+            <li>
+                <a href="./index.html">Home</a>
+                <a href="./index.html#locations">Locations</a>
+                <a href="./index.html#package">Packages</a>
+                <a href="./about.html">About Us</a>
+                <a href="./contactus.html#contact">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--Booking Form-->
+    <section class="booking">
+        <div class="booking-form">
+            <h1>Book <span>Here</span></h1>
+
+            <form onsubmit="return validatebooking()"action="book.php"  method="POST" > <!--onsubmit="return validatebooking()"-->
+
+            <input type="text" name="name" id="name" placeholder="Name" pattern="[A-Za-z\s]+" required >
+            <p  id="namealert"></p>
+
+            <input type="text" name="email" id="email" placeholder="Email-Id"  >
+            <p  id="emailalert"></p>
+
+            <input type="tel" name="phone" placeholder="Phone No." id="phone">
+            <p  id="phonealert"></p>
+            
+            <h4>Departure</h4>
+            <input type="date" name="departuredate" id="depdate">
+            <p  id="depalert"></p>
+
+            <h4>Return</h4>
+            <input type="date" name="returndate" id="retdate">
+            <p  id="retalert"></p>
+
+            <h4>Travel Destination</h4>
+            <input type="checkbox" name="td[]" value="Kashmir" id=""> Kashmir &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td[]" value="Istanbul" id=""> Istanbul &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td[]" value="Paris" id=""> Paris &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td[]" value="Bali" id=""> Bali &nbsp; &nbsp; &nbsp; <br>
+            <input type="checkbox" name="td[]" value="Dubai" id=""> Dubai &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td[]" value="Geneva" id=""> Geneva &nbsp; &nbsp; &nbsp; 
+            <input type="checkbox" name="td[]" value="Port Blair" id=""> Port Blair &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" name="td[]" value="Rome" id=""> Rome &nbsp; &nbsp; &nbsp;
+
+            <p  id="desalert"></p>
+
+            <br> <br>
+
+            <h4>Package</h4>
+            <input type="radio" name="packages" value="Bronze" id="loc1" > Bronze &nbsp; &nbsp; &nbsp;
+            <input type="radio" name="packages" value="Silver" id="loc2"> Silver &nbsp; &nbsp; &nbsp;
+            <input type="radio" name="packages" value="Gold" id="loc3"> Gold &nbsp; &nbsp; &nbsp;
+            <input type="radio" name="packages" value="Platinum" id="loc4"> Platinum &nbsp; &nbsp; &nbsp;
+
+            <p  id="pckgalert"></p>
+
+            <br> <br>
+
+            <input type="checkbox" name="t&c" id="" checked required> I accept the Terms & Conditions.
+            <br> <br>
+            <input type="submit" value="Submit" class="submitbtn">
+
+            </form>
+        </div>
+    </section>
+
+<!-- Footer -->
+
+<section class="footer">
+    <div class="foot">
+        <div class="footer-content">
+            
+            <div class="footlinks">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="./view.php">Bookings</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footlinks">
+                <h4>Connect</h4>
+                <div class="social">
+                    <a href="https://www.facebook.com/flyloka/" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/flyloka/?hl=en" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://twitter.com/?lang=en" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://www.youtube.com/" target="_blank"><i class='bx bxl-youtube' ></i></a>
+                    <a href="https://www.google.co.uk/" target="_blank"><i class= 'bx bxl-google' ></i></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="end">
+        <p>Copyright © 2023 Flyloka Travels All Rights Reserved.<br>Website developed by: Mohammed Atheeq</p>
+    </div>
+</section>
+
+<!-- Javascript -->
+<script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById("depdate").setAttribute("min",today);
+    document.getElementById("retdate").setAttribute("min",today);
+
+</script>
+
+
+</body>
+</html>
